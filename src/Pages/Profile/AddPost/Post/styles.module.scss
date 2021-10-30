@@ -1,0 +1,15 @@
+.post__wrapper{
+    display: flex;
+    margin-top: 15px;
+   .profile_avatar img{
+       border-radius: 50%;
+       height: 50px;
+   }
+   .post__text{
+       margin-top: -15px;
+       font-size: 25px;
+       font-family: "open-sans";
+       color: #47525E;
+       margin-left: 25px;
+   }
+}

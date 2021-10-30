@@ -15,9 +15,11 @@ body{
 a{
   text-decoration: none;
 }
+button{
+  cursor: pointer;
+}
 .app__content{
   display: flex;
-  color: red;
   min-width: 100%;
 }
 .content__wrapper{
