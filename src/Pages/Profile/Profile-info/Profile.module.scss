@@ -1,0 +1,13 @@
+.Profile__main{
+    display: flex;
+    background-color: #fff;
+    padding: 5%;
+    width: 80;
+    box-shadow: 0 0 0.75rem 0 rgb(0,0,0 / 10%);
+    .Profile__img{
+        img{
+            border-radius: 50%;
+            max-height: 100px;
+        }
+    }
+}

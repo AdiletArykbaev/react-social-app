@@ -1,0 +1,14 @@
+.Header_wrapper{
+        background-color: #FFf;
+        position: fixed;
+        z-index: 1000;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        height: 50px;
+        img{
+            height: 30px;
+            margin-left: 25px;
+            margin-top: 20px;
+        }
+}

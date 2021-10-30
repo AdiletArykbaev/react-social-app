@@ -1,0 +1,24 @@
+.AddPost{
+    margin-top: 25px;
+}
+.add__post{
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    input{
+        width: 80%;
+        font-size: 25px;
+        padding: 2%;
+        border-radius: 25px;
+    }
+    button{
+        width: 10%;
+        height: 30px;
+        flex-wrap: wrap;
+        margin-left: 70%;  
+        margin-top: 15px;
+        color: #fff;
+        background-color: #50b5ff;
+        border-color: #50b5ff;              
+    }
+}

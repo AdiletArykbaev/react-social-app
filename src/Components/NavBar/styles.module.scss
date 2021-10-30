@@ -1,0 +1,43 @@
+.NavBar__block{
+    width: 10%;
+    background-color: #Fff;
+    margin-top: 1%;
+    padding: 2%;
+    padding-bottom: 20%;
+    display: flex;
+    justify-content: center;
+    .NavBar__list{
+       
+        ul{
+            display: flex;
+            flex-direction: column;
+            margin-left: -50px;
+            margin-top: 50px;
+            line-height: 2.5;
+          
+            a{
+                color: #6d6e71;
+                font-family: 'Open Sans', sans-serif;
+                padding: 0 15px;
+                transition: 0.1s;
+            }
+            a:last-child{
+                margin-right: 15px;
+            }
+          
+            a.active  {
+                color: #Fff;
+                background: #50b5ff;
+
+            }
+            a:hover{
+                color: #50b5ff;
+
+            }
+            a:last-child{
+                margin-top: 15px;
+            }
+        }
+    }
+   
+}
