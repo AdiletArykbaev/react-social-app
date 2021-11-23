@@ -1,0 +1,32 @@
+.dialog{
+    flex-direction: column;
+    padding: 5%;
+}
+.user_info{
+    display: flex;
+
+}
+
+.user_info li{
+    margin-left: 5px;
+}
+.user_info img{
+    max-width: 50px;
+    height: 20px;
+    border-radius: 50%;
+}
+.messages{
+    padding: 5%;
+}
+.message_end{
+    padding: 2%;
+    border-radius: 5px;
+    display: flex;
+    justify-content: flex-end;
+}
+.message_start{
+    padding: 2%;
+    border-radius: 5px;
+    display: flex;
+    justify-content: flex-start;
+}

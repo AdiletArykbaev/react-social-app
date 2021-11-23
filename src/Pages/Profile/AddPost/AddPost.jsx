@@ -1,5 +1,4 @@
 import styles from "./AddPost.module.scss"
-import Post from './Post/Post'
 
 const AddPost = () => {
     
@@ -10,9 +9,7 @@ const AddPost = () => {
                <input placeholder="добавить пост " type="text" />
                <button lassName={styles.push}>добавить пост</button>
             </div>
-            <div className={styles.posts}>
-              <Post avatar="./avatar.png" text="hello now body loves me"/>
-            </div>
+  
         </div>
     )
 }

@@ -2,9 +2,11 @@ import React from 'react'
 import styles from "./Profile.module.scss"
 import ProfileInfo from './Profile-info/ProfileInfo'
 import AddPost from './AddPost/AddPost';
+import Post from './Post/Post'
 
 
-const Profile = () => {
+const Profile = (props) => {
+   
     return (
         <div className={styles.Profile}>
             <div className={styles.Profile_img}>
@@ -22,6 +24,9 @@ const Profile = () => {
             </div>
             <div className={styles.Profile_post}>
                 <AddPost/>
+                {props.state.postData.map((item)=>{
+                    return <Post avatar={item.avatar} text={item.text} likescount={item.likes} dislikecount={item.dislikes}/>
+                })}
             </div>
         </div>
     )

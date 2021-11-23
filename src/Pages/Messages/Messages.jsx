@@ -1,50 +1,25 @@
 import React from 'react'
 import styles from "./styles.module.scss"
-import { NavLink } from 'react-router-dom';
+import DialogItem from './Components/DialogItem/DialogItem.jsx'
+import Dialog from './Components/Dialogs/Dialog'
+const Messages = (props) => {
 
-const Messages = () => {
+    let users =  props.state.data.map(item=>{
+      return  <DialogItem name={item.user} link={item.id} img={item.img}/>           })
+
     return (
         <div className={styles.Messages_wrapper}>
-          <div className={styles.users}>
-            <div className={styles.user}>
-              <NavLink activeClassName={styles.active} to="/messages/1">
-              Adilet
-             </NavLink>
-              </div>
-            <div className={styles.user}>
-              <NavLink activeClassName={styles.active} to="/messages/2" >
-                Bakai
-             </NavLink>
+            <div className={styles.users}>
+           {users}
             </div>
-            <div className={styles.user}>
-             <NavLink activeClassName={styles.active}  to="/messages/3">
-              Kairat
-             </NavLink>
-            </div>
-            <div className={styles.user}>
-             <NavLink  activeClassName={styles.active} to="/messages/4">
-              Karina
-             </NavLink>
-            </div>
-            <div className={styles.user}>
-             <NavLink activeClassName={styles.active} to="/messages/5">
-              Mary
-             </NavLink>
-            </div>
-            
-
-          </div>
+           
          
           <div className={styles.dialogs}>
-            <div className={styles.dialog}>
-              Hello,what are you doing?
-            </div>
-            <div className={styles.dialog}>
-              where is my sait?!
-            </div> 
-            <div className={styles.dialog}>
-              why are you smilling?
-            </div>
+              {props.state.data.map(item=>{
+                              return <Dialog data={props.state.data} id={item.id} userAvatar={item.img} userName={item.user} message={item.body} />
+
+
+              })}
           </div>
         </div>
 

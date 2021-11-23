@@ -7,7 +7,7 @@ const Header = () => {
     return (
         <div className={styles.Header_wrapper}> 
             <div className={styles.logo__block}>
-                <img src="./logo.png" alt="logo" />
+                <img src="/logo.png" alt="logo" />
             </div>
 
         </div>

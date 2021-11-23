@@ -1,0 +1,20 @@
+.user{
+   
+    
+        padding: 15px;
+        cursor: pointer;
+        a{
+            color: #3f414d;
+            .active{
+                color: #007aff;
+            }
+        }
+        img{
+            max-height: 30px;
+            border-radius: 50%;
+        }
+        span{
+            margin-left: 5px;
+            margin-top: -5px;
+        }
+}

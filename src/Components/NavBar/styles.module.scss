@@ -1,5 +1,5 @@
 .NavBar__block{
-    width: 10%;
+    width: 17%;
     background-color: #Fff;
     margin-top: 1%;
     padding: 2%;
@@ -37,6 +37,23 @@
             a:last-child{
                 margin-top: 15px;
             }
+            .friendsList{
+                display: flex;
+                flex-direction: row;
+            }
+            .friend{
+                padding: 5px;
+                margin-top: 15px;
+                li{
+                    margin-top: -15px;
+                    margin-left: -5px;
+                }
+            }
+            .friend img{
+                max-width: 50px;
+                height: 20px;
+            }
+            
         }
     }
    
