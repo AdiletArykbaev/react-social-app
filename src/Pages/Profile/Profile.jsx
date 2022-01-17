@@ -6,7 +6,6 @@ import Post from './Post/Post'
 
 
 const Profile = (props) => {
-   
     return (
         <div className={styles.Profile}>
             <div className={styles.Profile_img}>
@@ -23,8 +22,8 @@ const Profile = (props) => {
                     />
             </div>
             <div className={styles.Profile_post}>
-                <AddPost/>
-                {props.state.postData.map((item)=>{
+                <AddPost inputVal={props.profilePage.inputData} addPost={props.addPost} func={props.func}/>
+                {props.profilePage.postData.map((item)=>{
                     return <Post avatar={item.avatar} text={item.text} likescount={item.likes} dislikecount={item.dislikes}/>
                 })}
             </div>

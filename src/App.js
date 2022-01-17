@@ -1,6 +1,6 @@
 import './App.css';
 import {
-  BrowserRouter as Router,
+ 
   Route,
 } from "react-router-dom";
 import NavBar from './Components/NavBar/NavBar';
@@ -10,17 +10,17 @@ import Messages from "./Pages/Messages/Messages";
 import News from "./Pages/News/News";
 import Music from "./Pages/Music/Music";
 import Settings from "./Pages/Settings/Setings";
+
 const App = (props) => {
-  
+  console.log(props.state)
   return (
-    <Router>
        <div className="App">
        <Header/>
        <div className="app__content">
        <NavBar friendsList={props.state.navBar.friends}/>
           <div className="content__wrapper">
            <Route path="/profile" render={()=>{
-            return  <Profile state={props.state.profilePage}/>
+            return  <Profile profilePage={props.state.profilePage} addPost={props.addPost} func={props.func}/>
            }}/>
            <Route path="/messages" render={()=>{
              return <Messages state={props.state.messagePage}/>
@@ -32,7 +32,6 @@ const App = (props) => {
        </div>
     
       </div>
-    </Router>
 
   )
 }

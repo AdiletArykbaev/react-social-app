@@ -1,4 +1,8 @@
-let state  = {
+let renderFunc = ()=>{
+  console.log("state was changed")
+}
+let store = {
+  _state:{
     profilePage:{
         postData:[{
             id:1,
@@ -32,6 +36,7 @@ let state  = {
           
           }
           ],
+        inputData:"adilet"
     },
     messagePage:{
         data:[
@@ -44,8 +49,36 @@ let state  = {
     },
     navBar:{
       friends:[{name:"Adilet",avatar:"/avatar.png"},{name:"Sultan",avatar:"/ava-twitch-32.jpg"},{name:"kairat",avatar:"/avatar.png"}]
-    }
-              
+    },
+          
+
+},
+getState(){
+  return this._state
+},
+_callsubscriber (){
+  console.log("state was changed")
+},
+addPost(){
+  let newPost = {
+    id:5,
+    text:this._state.profilePage.inputData,
+    avatar:"/avatar.png",
+    likes:0,
+    dislikes:2
+  };
+  this._state.profilePage.postData.push(newPost)
+  this._state.profilePage.inputData=""
+  this._callsubscriber()
+
+},
+changePost(value){
+  this._state.profilePage.inputData = value
+  this._callsubscriber()
+},
+subscriber(observer){
+  this._callsubscriber = observer
+},
 
 }
-export default state
+export default store

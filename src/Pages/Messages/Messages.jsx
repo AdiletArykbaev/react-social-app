@@ -4,6 +4,7 @@ import DialogItem from './Components/DialogItem/DialogItem.jsx'
 import Dialog from './Components/Dialogs/Dialog'
 const Messages = (props) => {
 
+    const testRef = React.createRef()
     let users =  props.state.data.map(item=>{
       return  <DialogItem name={item.user} link={item.id} img={item.img}/>           })
 
@@ -20,6 +21,12 @@ const Messages = (props) => {
 
 
               })}
+              <div className={styles.addText}>
+                <textarea ref={testRef} placeholder="ваше сообщение" className={styles.inputAreat}></textarea>
+                <button onClick={()=>{
+                  alert(testRef.current.value)
+                }} className={styles.addBtn}>отправить</button>
+              </div>
           </div>
         </div>
 
