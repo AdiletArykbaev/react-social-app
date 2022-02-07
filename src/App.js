@@ -12,18 +12,19 @@ import Music from "./Pages/Music/Music";
 import Settings from "./Pages/Settings/Setings";
 
 const App = (props) => {
-  console.log(props.state)
+  console.log("Props in Profile page",props)
   return (
        <div className="App">
        <Header/>
        <div className="app__content">
-       <NavBar friendsList={props.state.navBar.friends}/>
+         {/* friendsList={props.state.navBar.friends} */}
+       <NavBar />
           <div className="content__wrapper">
            <Route path="/profile" render={()=>{
-            return  <Profile profilePage={props.state.profilePage} addPost={props.addPost} func={props.func}/>
+            return  <Profile profilePage={props.state.profilePage} dispatch={props.dispatch} />
            }}/>
            <Route path="/messages" render={()=>{
-             return <Messages state={props.state.messagePage}/>
+             return <Messages state={props.state.messagePage} dispatch={props.dispatch}/>
            }}/>
            <Route path="/news" component={News}/>
            <Route path="/music" component={Music}/>

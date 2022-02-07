@@ -22,7 +22,7 @@ const Profile = (props) => {
                     />
             </div>
             <div className={styles.Profile_post}>
-                <AddPost inputVal={props.profilePage.inputData} addPost={props.addPost} func={props.func}/>
+                <AddPost inputVal={props.profilePage.inputData} dispatch={props.dispatch} />
                 {props.profilePage.postData.map((item)=>{
                     return <Post avatar={item.avatar} text={item.text} likescount={item.likes} dislikecount={item.dislikes}/>
                 })}
