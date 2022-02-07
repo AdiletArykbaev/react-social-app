@@ -7,15 +7,19 @@ import './index.css';
 import App from './App';
 import { BrowserRouter as Router} from "react-router-dom"
 
+
  const renderFunc = (state)=>{
+  
+  console.log("My store",store)
   ReactDOM.render(
   <React.StrictMode>
      <Router>
-       <App state={state} addPost={store.addPost.bind(store)} func={store.changePost.bind(store)}/>
+       <App state={state} dispatch={store.dispatch.bind(store)} />
     </Router>
 
   </React.StrictMode>,
   document.getElementById('root')
+  
 );
 }
 

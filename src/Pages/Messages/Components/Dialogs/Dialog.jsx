@@ -2,7 +2,6 @@ import React from 'react'
 import styles from "./Dialog.module.scss"
 
 const Dialog = (props) => {
-    console.log(props.data)
 
     return (
         <div className={styles.dialog}>
