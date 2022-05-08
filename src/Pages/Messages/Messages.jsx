@@ -1,14 +1,17 @@
 import React from 'react'
 import styles from "./styles.module.scss"
 import DialogItem from './Components/DialogItem/DialogItem.jsx'
-import {changeMessageValueActionCreator}from "../../redux/state"
 import Dialog from './Components/Dialogs/Dialog'
 const Messages = (props) => {
     const testRef = React.createRef()
     const changeInputPost = (messageValue)=>{
-        props.dispatch(changeMessageValueActionCreator(messageValue))
+        props.worker(props.action1(messageValue))
     }
-    let users =  props.state.data.map(item=>{
+    const addMessage = () =>{
+      props.worker(props.action2())
+
+    }
+    let users =  props.users.map(item=>{
       return  <DialogItem name={item.user} link={item.id} img={item.img}/>           })
 
     return (
@@ -19,7 +22,7 @@ const Messages = (props) => {
            
          
           <div className={styles.dialogs}>
-              {props.state.data.map(item=>{
+              {props.messages.map(item=>{
                               return <Dialog  id={item.id} userAvatar={item.img} userName={item.user} message={item.body} />
 
 
@@ -27,10 +30,10 @@ const Messages = (props) => {
               <div className={styles.addText}>
                 <textarea onChange={(e)=>{
                   changeInputPost(e.target.value)
-                }} value={props.state.dialogAreaValue} ref={testRef} className={styles.inputAreat}></textarea>
+                }} value={props.value} ref={testRef} className={styles.inputAreat}></textarea>
                 <button onClick={()=>{
-                  alert(testRef.current.value)
-                }} className={styles.addBtn}>отправить</button>
+                  addMessage()
+ }} className={styles.addBtn}>отправить</button>
               </div>
           </div>
         </div>
