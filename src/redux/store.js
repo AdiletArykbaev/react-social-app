@@ -1,10 +1,11 @@
-const ADD_POST = "ADD-POST"
-const CHANGE_POST = "CHANGE-POST"
-const CHANGE_INPUT_MESSAGE = "CHANGE-INPUT-MESSAGE"
+import messageReducer from "./messageReducer"
+import navbarReducer from "./navbarReducer"
+import profileReducer from "./profileReducer"
 
-export const addPostActionCreator = ()=>({type:ADD_POST})
-export const changePostActionCreator=(text)=>({type:CHANGE_POST,value:text})
-export const changeMessageValueActionCreator = (text)=>({type:CHANGE_INPUT_MESSAGE,value:text})
+
+
+
+
 let store = {
   _state:{
     profilePage:{
@@ -71,24 +72,11 @@ subscriber(observer){
   this._callsubscriber = observer
 },
 dispatch(action){
-  if(action.type === ADD_POST){
-    let newPost = {
-      id:5,
-      text:this._state.profilePage.inputData,
-      avatar:"/avatar.png",
-      likes:0,
-      dislikes:2
-    };
-    this._state.profilePage.postData.push(newPost)
-    this._state.profilePage.inputData=""
-    this._callsubscriber(this._state)
-  }else if(action.type === CHANGE_POST){
-    this._state.profilePage.inputData = action.value
-    this._callsubscriber(this._state)
-  }
-  else if(action.type === CHANGE_INPUT_MESSAGE){
-    this._state.messagePage.dialogAreaValue = action.value
-  }
+   this._state.profilePage = profileReducer(this._state.profilePage,action)
+   this._state.navBar =  navbarReducer(this._state.navBar,action)
+   this._state.messagePage =  messageReducer(this._state.messagePage,action)
+   this._callsubscriber(this._state)
+
 }
 
 
